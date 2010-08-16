@@ -1,6 +1,6 @@
 <?
-
-		require_once('include/lib/smarty/Smarty.class.php');
+	require_once('config/config.php');
+		require_once(SMARTY_DIR.'Smarty.class.php');
 		$smarty = new Smarty();
 		$smarty->template_dir = './themes/default/tpl/';
 		$smarty->compile_dir = './themes/default/tpl/compile/';
