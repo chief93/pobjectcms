@@ -1,5 +1,5 @@
 <?php
-require_once("../Def/index.php");
+require_once("modules/Def/index.php");
 
 class news extends Def{
     function execute () {
