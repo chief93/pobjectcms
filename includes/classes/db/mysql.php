@@ -7,12 +7,13 @@ class Database {
 	var $login;
 	var $password;
 	var $database;
- 
-	function Database() {
-		$this->host="localhost";
-		$this->login="";
-		$this->password="";
-		$this->database="";
+ 	car $charset;
+	function Database($host,$login,$password,$database,$charset) {
+		$this->host=$host;
+		$this->login=$login;
+		$this->password=$password;
+		$this->database=$database;
+		$this->charset=$charset;
 		$this->active=0; 		
 	}
 	function connect(){
@@ -21,7 +22,7 @@ class Database {
 			printf("SQL connection error: %s\n", mysqli_connect_error()); 
 			exit; 
 		} 
-		$this->link->set_charset("utf8");
+		$this->link->set_charset($charset);
 		$this->active=1;
 	}
 	function query($query){
@@ -33,7 +34,7 @@ class Database {
 			switch($array[0]){
 				case 'show':;
 				case 'select':  
-				if($array[1]=='count(*)'||$array[1]=='COUNT(*)'){
+				if($array[1]=='count(*)'){
 					$counts=$result->fetch_row();
 					$outcome=$counts[0];
 				}
@@ -48,7 +49,7 @@ class Database {
 				default: $outcome=$result; break; 
 			}
 		}
-		else{ echo "SQL connection error";echo $query;exit();} 
+		else{ echo "SQL connection error";exit();} 
 		return $outcome; 
 }
 	
