@@ -1,5 +1,5 @@
-﻿{foreach item=news from=news}
+﻿{foreach item=news from=$source}
 <b>{$news.header}</b>
 <br>
-{$news.msg}
+{$news.msg}<br><br>
 {/foreach}
