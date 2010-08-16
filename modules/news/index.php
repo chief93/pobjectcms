@@ -8,7 +8,7 @@ class news extends Def{
         $this->smarty->assign('header',$data['header']);
         $this->smarty->assign('msg',$data['msg']);
                 
-        return parent::action();
+        return parent::execute();
     }
 }
 ?>
