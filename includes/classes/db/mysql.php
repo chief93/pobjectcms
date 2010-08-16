@@ -8,12 +8,14 @@ class Database {
 	var $password;
 	var $database;
  	var $charset;
-	function Database($host,$login,$password,$database,$charset) {
+	var $prefix;
+	function Database($host,$login,$password,$database,$charset,$prefix) {
 		$this->host=$host;
 		$this->login=$login;
 		$this->password=$password;
 		$this->database=$database;
 		$this->charset=$charset;
+		$this->prefix=$prefix;
 		$this->active=0; 		
 	}
 	function connect(){

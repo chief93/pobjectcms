@@ -8,7 +8,7 @@ define("MYSQL_PASSWORD", "");
 define("MYSQL_DATABASE", "cms_db");
 define("MYSQL_PREFIX", "cms_");
 define("MYSQL_CHARSET", "utf8");
-
+define("MYSQL_DIR", str_replace("\\", "/", getcwd()).'../includes/classes/db/');
 
 ############################
 # Секция шаблонов (smarty v3)
