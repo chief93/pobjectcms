@@ -1,3 +1,3 @@
-<b>{$header}</b>
+﻿<b>{$header}</b>
 <br>
 {$msg}
