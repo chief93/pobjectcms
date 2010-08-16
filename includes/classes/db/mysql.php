@@ -7,7 +7,7 @@ class Database {
 	var $login;
 	var $password;
 	var $database;
- 	car $charset;
+ 	var $charset;
 	function Database($host,$login,$password,$database,$charset) {
 		$this->host=$host;
 		$this->login=$login;
@@ -51,9 +51,8 @@ class Database {
 		}
 		else{ echo "SQL connection error";exit();} 
 		return $outcome; 
-}
-	
-function insert_id(){
+	}
+	function insert_id(){
 		return $this->link->insert_id;
 	}
 }
