@@ -27,62 +27,29 @@ class Database {
 	function query($query){
 		if($this->active==0) $this->connect();
 		$result = $this->link->query($query);
-  
 		if($result != false){
-			
-$array=explode(" ",$query);
-			
-switch($array[0]){
-  case 'ALTER':;
-  case 'alter':;
-  case 'DROP':;
-  case 'drop':; case 'USE':;
-  case 'use':;
-  
-				case 'CREATE':;
-  case 'create':;
-  case 'INSERT':;
-  case 'insert':;
-  case 'UPDATE':;
-  case 'update':;
-  case 'delete':;
-  
-				case 'DELETE': $outcome=$result; break;
-  
-				case 'SHOW':;
-  case 'show':;
-  case 'SELECT':;
-  case 'select':  
-					if($array[1]=='count(*)'||$array[1]=='COUNT(*)'){
-   						$counts=$result->fetch_row();
-   
-						$outcome=$counts[0];
-  
-					}
-  else {
-   
-						if($result->num_rows > 0){
-
-							while($data = $result->fetch_assoc()){
- 
+			$array=explode(" ",$query);
+			$array[0]=strtolower($array[0]);			
+			switch($array[0]){
+				case 'show':;
+				case 'select':  
+				if($array[1]=='count(*)'||$array[1]=='COUNT(*)'){
+					$counts=$result->fetch_row();
+					$outcome=$counts[0];
+				}
+				else {
+					if($result->num_rows > 0){
+						while($data = $result->fetch_assoc()){
 							$outcome[]=$data;
- 
 						}
- 
-						}
- else $outcome=Array();
-					} break;
-  
-				default: break;
- 
+					}
+					else $outcome=Array();
+				} break;
+				default: $outcome=$result; break; 
 			}
-  
 		}
-  
 		else{ echo "SQL connection error";echo $query;exit();} 
-  
 		return $outcome; 
- 
 }
 	
 function insert_id(){
