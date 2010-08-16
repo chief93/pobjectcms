@@ -17,7 +17,7 @@ class Def
 		return true;
 	}
 	public function execute(){
-		return $this->smartyObject->fetch($name.'/index.tpl');
+		return $this->smarty->fetch($name.'/index.tpl');
 	} 	
 }
 ?>
