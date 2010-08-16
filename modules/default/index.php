@@ -3,6 +3,11 @@ class default
 {
 	protected $smarty;
 	protected $mydb;
+	protected $name;
+	public function setName($name){
+		$this->name=$name;
+		return true;
+	}
 	public function setDb(MySQL &$mysql) {
         	$this->mydb=&$mysql;
 		return true;
@@ -12,7 +17,7 @@ class default
 		return true;
 	}
 	public function execute(){
-		return $this->smartyObject->fetch('index.tpl');
+		return $this->smartyObject->fetch($name.'/index.tpl');
 	} 	
 }
 ?>

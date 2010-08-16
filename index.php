@@ -10,21 +10,21 @@ $smarty->cache_lifetime = TMPL_CACHE_LIFETIME;
 $smarty->cache_dir = TMPL_CACHE_DIR;
 $smarty->allow_php_tag = TMPL_ALLOW_PHP;
 $smarty->compile_dir = TMPL_COMPILE_DIR;
-$system=array();
-$system[]="Hello";
-$system[]="World";
-$system[]="From";
-$system[]="Array!";
-
-$smarty->assign('system', $system);
-
-$smarty->assign('name', 'world');
 
 
-$arr = array( 1001,1002,1003);
-$smarty->assign('custid', $arr);
 
 
+$class_name="news";
+
+require_once("modules/".$class_name."/index.php");
+$object=new $class_name();
+$object->setName($class_name);
+$object->setDb($mydb);
+$object->setSmarty($smarty);
+$content=$object->execute();
+	
+
+$smarty->assign('body', $content);
 $smarty->display('index.tpl');
 
 ?>
