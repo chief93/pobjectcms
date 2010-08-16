@@ -1,5 +1,5 @@
 <?php
-class default
+class Def
 {
 	protected $smarty;
 	protected $mydb;
