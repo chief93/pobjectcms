@@ -1,7 +1,7 @@
 <?php
-include "../default/default.php";
+require_once("../default/index.php");
 
-class news extends execute {
+class news extends default {
     function execute () {
         $data=$this->mydb->query('SELECT * FROM news');
         
