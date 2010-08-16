@@ -1,5 +1,4 @@
 ﻿<?
-
 require_once('config/config.php');
 require_once(SMARTY_DIR . 'Smarty.class.php');
 require_once(MYSQL_DIR . 'mysql.php');

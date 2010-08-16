@@ -1,6 +1,11 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 03:16:56
+<?php /* Smarty version 2.6.26, created on 2010-08-17 02:25:03
          compiled from news/index.tpl */ ?>
-﻿<b><?php echo $this->_tpl_vars['header']; ?>
+﻿<?php $_from = 'news'; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['news']):
+?>
+<b><?php echo $this->_tpl_vars['news']['header']; ?>
 </b>
 <br>
-<?php echo $this->_tpl_vars['msg']; ?>
+<?php echo $this->_tpl_vars['news']['msg']; ?>
+
+<?php endforeach; endif; unset($_from); ?>
