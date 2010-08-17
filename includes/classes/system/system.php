@@ -3,6 +3,7 @@ class System {
 	var $user;	
 	var $mydb;
 	var $smarty; 
+	var $js;
 	function System(){
 		require_once(SMARTY_DIR . 'Smarty.class.php');
 		require_once(MYSQL_DIR . 'mysql.php');
@@ -17,13 +18,21 @@ class System {
 		$this->smarty->compile_dir = TMPL_COMPILE_DIR;
 		$this->mydb=new Database(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE,MYSQL_CHARSET,MYSQL_PREFIX);
 		$this->user=new User($mydb,USER_SALT);
+		$this->js=array();
 		return true;
 	}
 	function load($class_name){
 		require_once("modules/".$class_name."/index.php");
 		$object=new $class_name();
-		$object->load($class_name,$this->mydb,$this->smarty,$this->user);
+		$object->load($class_name,$this->mydb,$this->smarty,$this->user,$this->js);
 		return $object->execute();
+	}
+	function jsAdd($val){
+		$this->js[]=$val;
+		return true;
+	}
+	function jsGet(){
+		return $this->js;
 	}
 }
 ?>
