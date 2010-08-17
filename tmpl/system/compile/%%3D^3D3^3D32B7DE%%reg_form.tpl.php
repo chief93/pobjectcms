@@ -1,5 +1,8 @@
+<?php /* Smarty version 2.6.26, created on 2010-08-17 14:42:37
+         compiled from modules/Authorization/reg_form.tpl */ ?>
 <div id="Authorization">
-{$text}
+<?php echo $this->_tpl_vars['text']; ?>
+
 <form action="" method="POST">
 <table>
 <tr>

@@ -1,3 +1,4 @@
+<div id="Authorization">
 {$text}
 <form action="" method="GET">
 <table>
@@ -14,3 +15,4 @@
 </tr>
 </table>
 </form>
+</div>

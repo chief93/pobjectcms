@@ -1,8 +1,9 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 13:16:55
+<?php /* Smarty version 2.6.26, created on 2010-08-17 14:41:55
          compiled from modules/Authorization/auth_form.tpl */ ?>
+<div id="Authorization">
 <?php echo $this->_tpl_vars['text']; ?>
 
-<form action="" method="POST">
+<form action="" method="GET">
 <table>
 <tr>
 <td>Логин:</td>
@@ -17,3 +18,4 @@
 </tr>
 </table>
 </form>
+</div>
