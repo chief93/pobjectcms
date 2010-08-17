@@ -14,5 +14,9 @@ class User {
 		if(md5(md5($data[0]['password'].$this->salt))!=$_COOKIE["password"]) return false;
 		else return true;
 	}
+	function getUserInfo(){
+		if($this->isAuth) return array('login'=>"".$_COOKIE["login"]."",'email'=>"".$_COOKIE["email"]."");
+		else return array('login'=>'Guest','email'=>'');
+	}
 }
 ?>

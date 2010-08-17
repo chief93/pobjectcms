@@ -1,4 +1,4 @@
-<?
+﻿<?
 
 require_once('config/config.php');
 require_once(SMARTY_DIR . 'Smarty.class.php');
@@ -29,6 +29,8 @@ $content=$object->execute();
 
 if($user->isAuth()) $content.="Пользователь авторизован";
 else $content.="Пользователь не авторизован";
+$data=$user->getUserInfo();
+$content.=". Привет ".$data['login']."!";
 $smarty->assign('body', $content);
 $smarty->display('index.tpl');
 
