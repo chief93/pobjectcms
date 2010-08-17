@@ -7,7 +7,7 @@ define("MYSQL_USER", "root");
 define("MYSQL_PASSWORD", "");
 define("MYSQL_DATABASE", "cms_db");
 define("MYSQL_PREFIX", "cms_");
-define("MYSQL_CHARSET", "utf-8);
+define("MYSQL_CHARSET", "utf-8");
 define("MYSQL_DIR", str_replace("\\", "/", getcwd()).'../includes/classes/db/');
 
 ############################
