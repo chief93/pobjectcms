@@ -1,8 +1,6 @@
 <?
 require_once('config/load.php');
 
-
-
 $class_name="News";
 $content=$system->load($class_name);	
 
