@@ -22,12 +22,12 @@ class Authorization extends Def{
 	}
 	function register(){
 		$this->template='reg_form.tpl';
-		$_out="Регистрация<br><a href='javascript:void(0);' onClick=\"toggle('".$this->name."','register','auth');\">Авторизоваться</a>";
+		$_out="Регистрация<br><a href='javascript:void(0);' onClick=\"toggle('".$this->name."','auth');\">Авторизоваться</a>";
 		return $_out;
 	}
 	function auth(){
 		$this->template='auth_form.tpl';
-		$_out="Авторизация<br><a href='javascript:void(0);' onClick=\"toggle('".$this->name."','auth','register');\">Зарегистрироваться</a>";
+		$_out="Авторизация<br><a href='javascript:void(0);' onClick=\"toggle('".$this->name."','register');\">Зарегистрироваться</a>";
 		return $_out;
 	}
 }

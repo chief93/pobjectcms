@@ -1,17 +1,23 @@
 function update_div(target,action){
 	$.get('ajax.php', {module: target, action: action}, function (data) {$('#'+target).html(data);});
 }
-function toggle(target,one,two,action){
+function toggle(target,one){		
 	if($('#'+one).html()){
-		hide(one);
-		show(two);	
+		$("#" + target + " > div[type='"+target+"_main']").css('visibility','hidden');
+		$("#" + target + " > div[type='"+target+"_main']").height('0');
+		show(one);		
 	}
 	else{
-		var temp1=$('#'+target).html();
-		$('#'+target).html("<div id='"+one+"'>1</div><div id='"+two+"'>2</div>");	
-		$('#'+one).html(temp1);
-		hide(one);
-		$.get('ajax.php', {module: target, action: two}, function (data) {$('#'+two).html(data);});
+		if(!$("div[type='"+target+"_main']").html()){
+			$('#'+target).html("<div id='"+one+"' type='"+target+"_main'></div>");
+		}
+		else{
+			$("#" + target + " > div[type='main']").css('visibility','hidden');
+			$("#" + target + " > div[type='"+target+"_main']").height('0');
+			$('#'+target).html($('#'+target).html()+"<div id='"+one+"' type='"+target+"_main'></div>")
+		}
+
+		$.get('ajax.php', {module: target, action: one}, function (data) {$('#'+one).html(data);});
 	}
 }
 function hide(target){
