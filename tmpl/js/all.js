@@ -12,7 +12,7 @@ function toggle(target,one){
 			$('#'+target).html("<div id='"+one+"' type='"+target+"_main'></div>");
 		}
 		else{
-			$("#" + target + " > div[type='main']").css('visibility','hidden');
+			$("#" + target + " > div[type='"+target+"_main']").css('visibility','hidden');
 			$("#" + target + " > div[type='"+target+"_main']").height('0');
 			$('#'+target).html($('#'+target).html()+"<div id='"+one+"' type='"+target+"_main'></div>")
 		}
