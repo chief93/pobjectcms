@@ -10,11 +10,11 @@ class Def
 		return true;
 	}
 	public function setDb(&$mysql) {
-        	$this->mydb=&$mysql;
+        	$this->mydb=$mysql;
 		return true;
 	}
 	public function setSmarty(Smarty &$smarty){
-		$this->smarty = &$smarty;
+		$this->smarty = $smarty;
 		return true;
 	}
 	public function execute(){

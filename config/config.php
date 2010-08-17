@@ -1,4 +1,4 @@
-<?
+﻿<?
 ############################
 # Секция MySQL
 ############################
@@ -22,5 +22,8 @@ define("TMPL_CACHE_LIFETIME", 10);
 define("TMPL_CACHE_DIR", "./tmpl/cache/");
 define("TMPL_COMPILE_DIR", "./tmpl/compile/");
 define("TMPL_ALLOW_PHP", true);
+############################
 
+define("USER_SALT", "random");
+define("USER_DIR", str_replace("\\", "/", getcwd()).'../includes/classes/user/');
 ?>
