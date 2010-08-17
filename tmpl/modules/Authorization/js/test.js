@@ -27,3 +27,11 @@ function auth_click(){
 	});
 	return false;
 }
+
+
+function auth_exit(){
+	$.get('ajax.php', {module: 'authorization', action: 'logout'},function(data){
+		window.location.reload();
+	});
+	return false;
+}

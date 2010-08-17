@@ -2,11 +2,11 @@
 require_once("modules/Def/index.php");
 
 class Authorization extends Def{
-	function execute () {		
-		$_out="";
-		if($this->user->isAuth()){
+	function execute () {	
+			
+		if(($this->user->isAuth())&&($this->action!="logout")){
 			$data=$this->user->getUserInfo();
-			$_out="<br>Привет ".$data['login']."!";
+			$_out="<br>Привет ".$data['login']."! <a href='javascript:void(0)' onClick='auth_exit();'>Выход</a>";
 		}
 		else{
 			if($this->action=="") $this->action="show_short_auth";
@@ -15,11 +15,16 @@ class Authorization extends Def{
 				case "show_short_auth": $_out=$this->show_short_auth(); break;
 				case "auth_try": $this->auth_try();
 				case "reg_try": $this->reg_try();
+				case "logout": $this->logout();
 			}
 		}
 		
         	$this->smarty->assign('text',$_out);
         	return parent::execute();	
+	}
+	function logout(){
+		$this->user->user_logout();
+		return true;
 	}
 	function auth_try(){
 		if(!isset($_GET['login'])||$_GET['login']=="") $this->message(1); 

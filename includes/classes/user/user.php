@@ -37,5 +37,9 @@ class User {
 		setcookie ("password", $b,time()+36000);
 		$this->message(0);
 	}
+	function user_logout(){
+		setcookie ("login","");
+		setcookie ("password","");
+	}
 }
 ?>
