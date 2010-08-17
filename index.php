@@ -1,24 +1,19 @@
-<?
-
-require_once('config/config.php');
+﻿<?
+require_once('config/load.php');
 
 
 
 $class_name="news";
-require_once("modules/".$class_name."/index.php");
-$object=new $class_name();
-$object->load($class_name,$mydb,$smarty,$user);
-$content=$object->execute();
-	
+$content=$system->load($class_name);	
 
 
 
 
-if($user->isAuth()) $content.="Пользователь авторизован";
+if($system->user->isAuth()) $content.="Пользователь авторизован";
 else $content.="Пользователь не авторизован";
-$data=$user->getUserInfo();
+$data=$system->user->getUserInfo();
 $content.=". Привет ".$data['login']."!";
-$smarty->assign('body', $content);
-$smarty->display('index.tpl');
+$system->smarty->assign('body', $content);
+$system->smarty->display('index.tpl');
 
 ?>
