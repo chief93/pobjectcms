@@ -7,7 +7,7 @@ class Def
 	protected $user;
 	protected $template='index.tpl';
 	protected $action;
-	public function load($name,&$mysql,&$smarty,&$user,&$js){
+	public function load($name,&$mysql,&$smarty,&$user,&$js,&$css){
 		$this->name=$name;
 		$this->mydb=&$mysql;
 		$this->smarty = &$smarty;
@@ -15,6 +15,7 @@ class Def
 		if(isset($_GET['action'])) $this->action=$_GET['action'];
 		else $this->action="";
 		$js=$this->load_res("js",$js);
+		$css=$this->load_res("css",$css);
 		return true;
 	}
 	public function setAction($act){
