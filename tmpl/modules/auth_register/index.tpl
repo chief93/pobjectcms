@@ -1,4 +1,3 @@
-<div id="Authorization">
 {$text}
 <form action="" method="GET" onSubmit="register_click();return false;">
 <div id="register_error"><br></div>
@@ -24,4 +23,3 @@
 </tr>
 </table>
 </form>
-</div>

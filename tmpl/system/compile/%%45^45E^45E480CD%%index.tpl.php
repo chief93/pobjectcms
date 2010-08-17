@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 22:47:44
+<?php /* Smarty version 2.6.26, created on 2010-08-17 23:29:59
          compiled from index.tpl */ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -41,6 +41,8 @@
 <div id="page_body">
 <div class="inherit">
 <?php echo $this->_tpl_vars['module_body']; ?>
+
+<?php echo $this->_tpl_vars['block3']; ?>
 
 </div>
 </div>

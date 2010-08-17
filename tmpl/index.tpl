@@ -32,6 +32,7 @@
 <div id="page_body">
 <div class="inherit">
 {$module_body}
+{$block3}
 </div>
 </div>
 </body>
