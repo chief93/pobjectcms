@@ -20,5 +20,4 @@ function hide(target){
 }
 function show(target){
 	$('#'+target).css('visibility','visible');
-	$('#'+target).height('100%');
 }
