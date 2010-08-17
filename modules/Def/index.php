@@ -14,7 +14,7 @@ class Def
 		return true;
 	}
 	public function execute(){
-		return $this->smarty->fetch($this->name."/".$this->template);
+		return $this->smarty->fetch("modules/".$this->name."/".$this->template);
 	} 	
 }
 ?>
