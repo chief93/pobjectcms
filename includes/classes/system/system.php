@@ -17,7 +17,7 @@ class System {
 		$this->smarty->allow_php_tag = TMPL_ALLOW_PHP;
 		$this->smarty->compile_dir = TMPL_COMPILE_DIR;
 		$this->mydb=new Database(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE,MYSQL_CHARSET,MYSQL_PREFIX);
-		$this->user=new User($mydb,USER_SALT);
+		$this->user=new User($this->mydb,USER_SALT);
 		$this->js=array();
 		return true;
 	}
