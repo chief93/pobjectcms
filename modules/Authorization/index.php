@@ -9,9 +9,8 @@ class Authorization extends Def{
 			$_out="<br>Привет ".$data['login']."!";
 		}
 		else{
-			if(isset($_GET['action'])) $action=$_GET['action'];
-			else $action="auth";
-			switch($action){
+			if($this->action=="") $this->action="auth";
+			switch($this->action){
 				case "register":$_out=$this->register(); break;
 				case "auth": $_out=$this->auth(); break;
 			}
