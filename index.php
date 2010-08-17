@@ -9,7 +9,7 @@ $system->cssAdd("tmpl/css/all.css");
 $block1=$system->load('News');
 $block2=$system->load('Authorization');	
 
-$system->smarty->assign('body', $block1);
+$system->smarty->assign('module_body', $block1);
 $system->smarty->assign('auth_form', $block2);
 
 $settings=array();

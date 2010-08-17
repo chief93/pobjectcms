@@ -1,0 +1,76 @@
+body {
+background: url(/tmpl/img/bg.jpg);
+font-size: 60%;
+color: gray;
+font-family: Tahoma, Arial;
+}
+
+input {
+background: url(/tmpl/img/bg.jpg);
+border: 0px;
+height: 12px;
+font-size: 10px;
+}
+
+a {
+color: gray;
+text-decoration: none;
+}
+
+a:hover {
+color: gray;
+text-decoration: underline;
+}
+
+#logo {
+position: absolute;
+left: 25%;
+top: 0px;
+width: 50%;
+height: 250px;
+}
+
+#page_dir {
+background: url(/tmpl/img/bg_body.jpg);
+position: absolute;
+left: 25%;
+top: 250px;
+width: 50%;
+height: 25px;
+border-bottom: 1px solid gray;
+}
+
+#login_form {
+position: absolute;
+left: 25%;
+top: 275px;
+width: 50%;
+}
+
+#page_body {
+background: url(/tmpl/img/bg_body.jpg);
+position: absolute;
+left: 25%;
+top: 340px;
+width: 50%;
+min-height: 75%;
+border-top: 1px solid gray;
+}
+
+.inherit {
+position: absolute;
+left: 4px;
+top: 3px;
+width: 90%;
+height: 90%;
+}
+
+.submit {
+background: transparent;
+color: gray;
+}
+
+.submit:hover {
+color: gray;
+text-decoration: underline;
+}

@@ -15,7 +15,24 @@
 {/if}
 {/foreach}
 </head>
-<body style="background: url(/tmpl/img/bg.jpg);">
-
+<body>
+<div id="logo">
+<img src="/tmpl/img/logo.jpg" style="width: 100%; height: 100%;">
+</div>
+<div id="page_dir">
+<div class="inherit">
+[Тут будет дерево пути до страницы]
+</div>
+</div>
+<div id="login_form">
+<div class="inherit">
+{$auth_form}
+</div>
+</div>
+<div id="page_body">
+<div class="inherit">
+{$module_body}
+</div>
+</div>
 </body>
 </html>
