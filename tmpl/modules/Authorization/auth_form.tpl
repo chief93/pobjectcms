@@ -1,5 +1,5 @@
 {$text}
-<form action="" method="POST">
+<form action="" method="GET">
 <table>
 <tr>
 <td>Логин:</td>
