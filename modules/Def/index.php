@@ -4,6 +4,7 @@ class Def
 	protected $smarty;
 	protected $mydb;
 	protected $name;
+	protected $template='index.tpl';
 	public function setName($name){
 		$this->name=$name;
 		return true;
@@ -17,7 +18,7 @@ class Def
 		return true;
 	}
 	public function execute(){
-		return $this->smarty->fetch($this->name.'/index.tpl');
+		return $this->smarty->fetch($this->name."/".$this->template);
 	} 	
 }
 ?>
