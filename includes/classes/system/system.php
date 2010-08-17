@@ -1,4 +1,4 @@
-﻿<?
+<?
 class System {
 	var $user;	
 	var $mydb;

@@ -1,4 +1,4 @@
-﻿<?
+<?
 class User {
 	protected $mydb;
 	protected $salt;

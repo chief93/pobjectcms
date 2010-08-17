@@ -1,8 +1,8 @@
-ï»¿<?
+<?
 require_once('config.php');
 require_once('includes/classes/system/system.php');
 #############################
-# Ð¡Ñ‚Ð°Ñ€Ñ‚ Ð²ÑÐµÑ… Ð²Ð°Ð¶Ð½Ñ‹Ñ… ÐºÐ»Ð°ÑÑÐ¾Ð²
+# Ñòàðò âñåõ âàæíûõ êëàññîâ
 #############################
 $system=new System();
 ?>
