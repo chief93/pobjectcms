@@ -1,4 +1,4 @@
-﻿<?
+<?
 ############################
 # Секция MySQL
 ############################
@@ -23,7 +23,13 @@ define("TMPL_CACHE_DIR", "./tmpl/cache/");
 define("TMPL_COMPILE_DIR", "./tmpl/compile/");
 define("TMPL_ALLOW_PHP", true);
 ############################
-
+# Секция user
+############################
 define("USER_SALT", "random");
 define("USER_DIR", str_replace("\\", "/", getcwd()).'../includes/classes/user/');
+
+############################
+# Старт загрузчика
+############################
+require_once("load.php");
 ?>

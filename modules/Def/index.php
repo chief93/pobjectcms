@@ -4,17 +4,13 @@ class Def
 	protected $smarty;
 	protected $mydb;
 	protected $name;
+	protected $user;
 	protected $template='index.tpl';
-	public function setName($name){
+	public function load($name,&$mysql,&$smarty,$user){
 		$this->name=$name;
-		return true;
-	}
-	public function setDb(&$mysql) {
-        	$this->mydb=$mysql;
-		return true;
-	}
-	public function setSmarty(Smarty &$smarty){
+		$this->mydb=$mysql;
 		$this->smarty = $smarty;
+		$this->user=$user;
 		return true;
 	}
 	public function execute(){
