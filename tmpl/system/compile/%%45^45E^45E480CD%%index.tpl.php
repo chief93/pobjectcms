@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 18:02:44
+<?php /* Smarty version 2.6.26, created on 2010-08-17 20:34:14
          compiled from index.tpl */ ?>
 <?php $_from = $this->_tpl_vars['settings']['scripts']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['item']):

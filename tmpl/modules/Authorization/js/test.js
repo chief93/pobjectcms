@@ -1,6 +1,6 @@
-function register_click(){alert($('#register_password2').val());
+function register_click(){
 	$.get('ajax.php', {module: 'authorization', action: 'reg_try',login:$('#register_login').val(),password:$('#register_password').val(),password2:$('#register_password2').val(),email:$('#register_email').val()},function(data){
-		var txt="";alert(data);
+		var txt="";
 		switch(data){
 			case "1": txt="Ошибка - введите логин";break;
 			case "2": txt="Ошибка - введите пароль";break;
@@ -15,7 +15,6 @@ function register_click(){alert($('#register_password2').val());
 }
 
 function auth_click(){
-	alert('sadsad');
 	$.get('ajax.php', {module: 'authorization', action: 'auth_try',login:$('#auth_login').val(),password:$('#auth_password').val()},function(data){
 		var txt="";
 		switch(data){

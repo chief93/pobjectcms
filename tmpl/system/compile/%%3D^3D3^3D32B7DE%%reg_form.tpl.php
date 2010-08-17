@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 20:19:40
+<?php /* Smarty version 2.6.26, created on 2010-08-17 20:34:14
          compiled from modules/Authorization/reg_form.tpl */ ?>
 <div id="Authorization">
 <?php echo $this->_tpl_vars['text']; ?>

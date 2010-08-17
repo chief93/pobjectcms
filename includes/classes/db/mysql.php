@@ -51,7 +51,7 @@ class Database {
 				default: $outcome=$result; break; 
 			}
 		}
-		else{ echo "SQL connection error";exit();} 
+		else{ echo "SQL connection error";echo $query;exit();} 
 		return $outcome; 
 	}
 	function insert_id(){
