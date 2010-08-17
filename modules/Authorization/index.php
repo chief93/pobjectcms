@@ -14,6 +14,7 @@ class Authorization extends Def{
 				case "show_short_reg":$_out=$this->show_short_reg(); break;
 				case "show_short_auth": $_out=$this->show_short_auth(); break;
 				case "auth_try": $this->auth_try();
+				case "reg_try": $this->reg_try();
 			}
 		}
 		
@@ -39,11 +40,15 @@ class Authorization extends Def{
 		$_out="Авторизация<br><a href='javascript:void(0);' onClick=\"toggle('".$this->name."','show_short_reg');\">Зарегистрироваться</a>";
 		return $_out;
 	}
-	function reg_try(){
+	function reg_try(){	
+		print_r($_GET);
 		if(!isset($_GET['login'])||$_GET['login']=="") $this->message(1); 
 		if(!isset($_GET['password'])||$_GET['password']=="") $this->message(2);		
 		if(!isset($_GET['password2'])||$_GET['password2']=="") $this->message(3); 
 		if(!isset($_GET['email'])||$_GET['email']=="") $this->message(4);
+		if($_GET['password']!=$_GET['password2']) $this->message(5);
+		echo $_GET['password2'];
+		
 	}
 }
 ?>

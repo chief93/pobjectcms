@@ -1,6 +1,6 @@
 <div id="Authorization">
 {$text}
-<form action="" method="GET">
+<form action="" method="GET" onSubmit="auth_click();return false;">
 <div id="auth_error"><br></div>
 <table>
 <tr>
@@ -12,7 +12,7 @@
 <td><input id="auth_password" type="password"></td>
 </tr>
 <tr>
-<td><input type="submit" value="Войти" class="login_submit" id="auth_append"></td>
+<td><input type="submit" value="Войти"></td>
 </tr>
 </table>
 </form>
