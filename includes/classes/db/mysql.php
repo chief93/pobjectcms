@@ -24,7 +24,7 @@ class Database {
 			printf("SQL connection error: %s\n", mysqli_connect_error()); 
 			exit; 
 		} 
-		//$this->link->set_charset($charset);
+		$this->link->set_charset($charset);
 		$this->active=1;
 	}
 	function query($query){
