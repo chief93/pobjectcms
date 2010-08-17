@@ -6,11 +6,11 @@ $system->cssAdd("tmpl/css/all.css");
 
 
 
-$class_name="News";
-$content=$system->load($class_name);	
-$class_name="Authorization";
-$content.=$system->load($class_name);	
+$block1=$system->load('News');
+$block2=$system->load('Authorization');	
 
+$system->smarty->assign('body', $block1);
+$system->smarty->assign('auth_form', $block2);
 
 $settings=array();
 $settings['scripts']=$system->jsGet();
