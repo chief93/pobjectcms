@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 21:32:22
+<?php /* Smarty version 2.6.26, created on 2010-08-17 22:47:44
          compiled from index.tpl */ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -23,7 +23,26 @@
 <?php endif; ?>
 <?php endforeach; endif; unset($_from); ?>
 </head>
-<body style="background: url(/tmpl/img/bg.jpg);">
+<body>
+<div id="logo">
+<img src="/tmpl/img/logo.jpg" style="width: 100%; height: 100%;">
+</div>
+<div id="page_dir">
+<div class="inherit">
+[Тут будет дерево пути до страницы]
+</div>
+</div>
+<div id="login_form">
+<div class="inherit">
+<?php echo $this->_tpl_vars['auth_form']; ?>
 
+</div>
+</div>
+<div id="page_body">
+<div class="inherit">
+<?php echo $this->_tpl_vars['module_body']; ?>
+
+</div>
+</div>
 </body>
 </html>
