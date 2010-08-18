@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-17 23:29:59
+<?php /* Smarty version 2.6.26, created on 2010-08-18 13:53:29
          compiled from index.tpl */ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,7 +34,7 @@
 </div>
 <div id="login_form">
 <div class="inherit">
-<?php echo $this->_tpl_vars['auth_form']; ?>
+<?php echo $this->_tpl_vars['auth']; ?>
 
 </div>
 </div>
@@ -42,8 +42,7 @@
 <div class="inherit">
 <?php echo $this->_tpl_vars['module_body']; ?>
 
-<?php echo $this->_tpl_vars['block3']; ?>
-
+$block3.=$system->load('auth_register');
 </div>
 </div>
 </body>
