@@ -26,13 +26,13 @@
 </div>
 <div id="login_form">
 <div class="inherit">
-{$auth_form}
+{$auth}
 </div>
 </div>
 <div id="page_body">
 <div class="inherit">
 {$module_body}
-{$block3}
+$block3.=$system->load('auth_register');
 </div>
 </div>
 </body>
