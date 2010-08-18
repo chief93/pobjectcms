@@ -27,6 +27,7 @@ class auth_register extends Def{
 		if(!isset($_GET['password2'])||$_GET['password2']=="") $this->message(3); 
 		if(!isset($_GET['email'])||$_GET['email']=="") $this->message(4);
 		if($_GET['password']!=$_GET['password2']) $this->message(5);
+		if(!preg_match('/^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9_](?:[a-zA-Z0-9_\-](?!\.)){0,61}[a-zA-Z0-9_-]?\.)+[a-zA-Z0-9_](?:[a-zA-Z0-9_\-](?!$)){0,61}[a-zA-Z0-9_]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/', $_GET['email'])) $this->message(6);
 		$this->message($this->user->regTry($_GET['login'],$_GET['password'],$_GET['email']));
 	}
 }
