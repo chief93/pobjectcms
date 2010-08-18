@@ -18,7 +18,7 @@
 <body>
 
 <table>
-<tr>
+<tr valign="top">
 <td width="200">
 {$left}
 </td>

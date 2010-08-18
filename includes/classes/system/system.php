@@ -23,10 +23,10 @@ class System {
 		$this->css=$this->load_res("css");
 		return true;
 	}
-	function load($class_name){
+	function load($class_name,$settings=""){
 		require_once("modules/".$class_name."/index.php");
 		$object=new $class_name();
-		$object->load($class_name,$this->mydb,$this->smarty,$this->user,$this->js,$this->css);
+		$object->load($class_name,$settings,$this->mydb,$this->smarty,$this->user,$this->js,$this->css);
 		return $object->execute();
 	}
 	protected function load_res($type){
