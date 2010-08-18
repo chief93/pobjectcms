@@ -1,4 +1,7 @@
-{$text}
+<?php /* Smarty version 2.6.26, created on 2010-08-18 19:59:50
+         compiled from modules/mod_auth_register/index.tpl */ ?>
+<?php echo $this->_tpl_vars['text']; ?>
+
 <form action="" method="GET" onSubmit="register_click();return false;">
 <div id="register_error"><br></div>
 <table>

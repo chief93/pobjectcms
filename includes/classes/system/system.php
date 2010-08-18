@@ -19,8 +19,8 @@ class System {
 		$this->smarty->compile_dir = TMPL_COMPILE_DIR;
 		$this->mydb=new Database(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE,MYSQL_CHARSET,MYSQL_PREFIX);
 		$this->user=new User($this->mydb,USER_SALT);
-		$this->js=array();
-		$this->css=array();
+		$this->js=$this->load_res("js");
+		$this->css=$this->load_res("css");
 		return true;
 	}
 	function load($class_name){
@@ -29,19 +29,19 @@ class System {
 		$object->load($class_name,$this->mydb,$this->smarty,$this->user,$this->js,$this->css);
 		return $object->execute();
 	}
-	function jsAdd($val){
-		$this->js[]=$val;
-		return true;
-	}
-	function jsGet(){
-		return $this->js;
-	}
-	function cssAdd($val){
-		$this->css[]=$val;
-		return true;
-	}
-	function cssGet(){
-		return $this->css;
+	protected function load_res($type){
+		$arr=array();
+		$folder="tmpl/system/".$type."/";
+		if (is_dir($folder)){
+			if ($dir = opendir($folder)){
+				while (false !== ($file = readdir($dir))){
+					if (end(explode(".", $file))==$type){ 
+						$arr[]="/".$folder.$file;
+					}
+				}
+			}
+		}
+		return $arr;
 	}
 }
 ?>
