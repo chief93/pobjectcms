@@ -16,6 +16,20 @@
 {/foreach}
 </head>
 <body>
-{$body}
+
+<table>
+<tr>
+<td width="200">
+{$left}
+</td>
+<td width="200">
+{$center}
+</td>
+<td>
+{$right}
+</td>
+<tr>
+</table>
+
 </body>
 </html>
