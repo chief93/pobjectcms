@@ -1,4 +1,5 @@
 <?
+header("http/1.0 200 Ok");
 require_once('config/load.php');
 $system->jsAdd("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
 $system->jsAdd("tmpl/js/all.js");
