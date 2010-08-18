@@ -31,7 +31,7 @@ class Def
 			if ($dir = opendir($folder)){
 				while (false !== ($file = readdir($dir))){
 					if (end(explode(".", $file))==$type){ 
-						$arr[]=$folder.$file;
+						$arr[]="/".$folder.$file;
 					}
 				}
 			}

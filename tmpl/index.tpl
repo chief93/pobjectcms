@@ -6,12 +6,12 @@
 <link rel="icon" type="image/png" href="/tmpl/img/favicon.png">
 {foreach item=item from=$settings.styles}
 {if $item != ''}
-	<link rel="stylesheet" href="/{$item}" type="text/css"/>
+	<link rel="stylesheet" href="{$item}" type="text/css"/>
 {/if}
 {/foreach}
 {foreach item=item from=$settings.scripts}
 {if $item != ''}
-	<script type='text/javascript' src='/{$item}'></script>
+	<script type='text/javascript' src='{$item}'></script>
 {/if}
 {/foreach}
 </head>

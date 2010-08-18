@@ -31,6 +31,8 @@ class User {
 		exit();
 	}
 	function regTry($a,$b,$c){
+		$data=$this->mydb->query("select id from users where login='".$a."'");
+		if(count($data)!=0) $this->message(7);
 		$pass=md5(md5($b.$this->salt));
 		$this->mydb->query("insert into users values('','".$a."','".$pass."','".$c."')");
 		setcookie ("login", $a,time()+36000);

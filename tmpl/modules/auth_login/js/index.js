@@ -1,5 +1,5 @@
 function auth_click(){
-	$.get('ajax.php', {module: 'auth_login', action: 'auth_try',login:$('#auth_login').val(),password:$('#auth_password').val()},function(data){
+	$.get('/ajax.php', {module: 'auth_login', action: 'auth_try',login:$('#auth_login').val(),password:$('#auth_password').val()},function(data){
 		var txt="";
 		switch(data){
 			case "1": txt="Ошибка - введите логин";break;
