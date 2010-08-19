@@ -1,17 +1,19 @@
 function register_click(){
-	$.get('/ajax.php', {module: 'mod_auth_register', action: 'reg_try',login:$('#register_login').val(),password:$('#register_password').val(),password2:$('#register_password2').val(),email:$('#register_email').val()},function(data){
-		var txt="";
-		switch(data){
-			case "1": txt="Ошибка - введите логин";break;
-			case "2": txt="Ошибка - введите пароль";break;
-			case "3": txt="Ошибка - введите проверочный пароль";break;
-			case "4": txt="Ошибка - введите email";break;
-			case "5": txt="Ошибка - пароли не совпадают";break;
-			case "6": txt="Введенный email некоррректный"; break;		
-			case "7": txt="Данный логин занят"; break;		
-			case "0": window.location.reload(); break;
-		}
-		$("#register_error").html("<span style='color:red;'>" + txt + "</span>");
+	massiv=parse_form('mod_auth_register');
+	$.get('/ajax.php', {module: 'mod_auth_register', action: 'reg_try', 'massiv[]': massiv[]},function(data){
+		alert(data);
 	});
 	return false;
+}
+
+function parse_form (form) {
+    var form_arr=Array();
+    var number=0;
+    $('#'+form + ' input').each(function () {    
+	form_arr[number]=Array();
+        form_arr[number]['id']=this.id;
+        form_arr[number]['value']=this.value;
+        number++;
+    });
+    return form_arr;
 }

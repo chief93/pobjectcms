@@ -1,5 +1,5 @@
 {$text}
-<form action="" method="GET" onSubmit="register_click();return false;">
+<form action="" method="GET" onSubmit="register_click();return false;"id="mod_auth_register">
 <div id="register_error"><br></div>
 <table>
 <tr>

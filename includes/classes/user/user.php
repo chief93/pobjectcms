@@ -2,7 +2,13 @@
 class User {
 	protected $mydb;
 	protected $salt;
+	protected $fields;
+	protected $errors;
 	function User(&$mydb,$salt){
+		$str="login/2/password/1/password2/password/email/2";
+		$this->fields=explode("/",$str);
+		$errors_str="Логин не указан...Этот логин уже занят/Пароль не указан/Пароли не совпадают/Email не указан...Этот email уже занят";
+		$this->errors=explode("/",$errors_str);
 		$this->mydb=&$mydb;
 		$this->salt=$salt;
 		return true;
@@ -34,7 +40,15 @@ class User {
 		echo $text;
 		exit();
 	}
-	function regTry($a,$b,$c){
+	function regTry($parametrs){
+		$result=0;
+		//foreach($parametrs as $param){
+			
+		//}
+		//print_r($parametrs);
+		return count($parametrs);
+	}
+	/*function regTry($a,$b,$c){
 		$data=$this->mydb->query("select id from users where login='".$a."'");
 		if(count($data)!=0) $this->message(7);
 		$pass=md5(md5($b.$this->salt));
@@ -42,7 +56,7 @@ class User {
 		setcookie ("login", $a,time()+36000);
 		setcookie ("password", $b,time()+36000);
 		$this->message(0);
-	}
+	}*/
 	function user_logout(){
 		setcookie ("login","");
 		setcookie ("password","");
