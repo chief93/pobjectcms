@@ -8,9 +8,11 @@ class Def
 	protected $template='index.tpl';
 	protected $action;
 	protected $settings;
-	public function load($name,$settings,&$mysql,&$smarty,&$user,&$js,&$css){
+	protected $admin_settings;
+	public function load($name,$settings,$admin_settings,&$mysql,&$smarty,&$user,&$js,&$css){
 		$this->name=$name;
 		$this->settings=explode("/",$settings);
+		$this->admin_settings=explode("/",$admin_settings);
 		$this->mydb=&$mysql;
 		$this->smarty = &$smarty;
 		$this->user=&$user;

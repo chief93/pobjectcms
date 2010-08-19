@@ -10,21 +10,21 @@ if($_SERVER['REDIRECT_URL']!=""){
 	
 	if(substr($parametrs,0,4)=="mod_"){
 		$is_module=1;
-		$where="(menu='*' or name='".$params[0]."')";	
+		$where="(mod_menu='*' or mod_name='".$params[0]."')";	
 	}
 	else{
-		$where="(menu like '%,".$params[0].",%' or menu='*')";	
+		$where="(mod_menu like '%,".$params[0].",%' or mod_menu='*')";	
 	}
 }
 else{
-	$where="menu='*'";
+	$where="mod_menu='*'";
 }
-$l_r=$system->mydb->query("select name,position,settings from modules where ".$where." and (visible='".$system->user->getAccess()."' or visible='-1') order by position_order");
+$l_r=$system->mydb->query("select mod_name,mod_position,mod_settings,mod_admin_settings from modules where ".$where." and (mod_visible='".$system->user->getAccess()."' or mod_visible='-1') order by mod_order");
 $arr=array();
 if(count($l_r)>0){
 	foreach($l_r as $a){
-		if($is_module) if($a['name']==$params[0]) $a['settings']=substr($parametrs,strlen($params[0])+1);
-		$arr[$a['position']].=$system->load($a['name'],$a['settings'])."<br>";
+		if($is_module) if($a['mod_name']==$params[0]) $a['mod_settings']=substr($parametrs,strlen($params[0])+1);
+		$arr[$a['mod_position']].=$system->load($a['mod_name'],$a['mod_settings'],$a['mod_admin_settings'])."<br>";
 	}
 }
 
