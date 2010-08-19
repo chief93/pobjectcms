@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-20 00:09:07
+<?php /* Smarty version 2.6.26, created on 2010-08-20 02:48:24
          compiled from modules/mod_auth_register/index.tpl */ ?>
 <?php echo $this->_tpl_vars['text']; ?>
 
@@ -7,19 +7,19 @@
 <table>
 <tr>
 <td>Логин:</td>
-<td><input id="register_login"></td>
+<td><input id="login"></td>
 </tr>
 <tr>
 <td>Пароль:</td>
-<td><input id="register_password" type="password"></td>
+<td><input id="password" type="password"></td>
 </tr>
 <tr>
 <td>Проверка пароля:</td>
-<td><input id="register_password2" type="password"></td>
+<td><input id="password2" type="password"></td>
 </tr>
 <tr>
 <td>E-mail:</td>
-<td><input id="register_email"></td>
+<td><input id="email"></td>
 </tr>
 <tr>
 <td><input type="submit" value="Зарегистрироваться"></td>

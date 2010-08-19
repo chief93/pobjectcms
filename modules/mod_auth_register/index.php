@@ -22,8 +22,7 @@ class mod_auth_register extends Def{
 		return $_out;
 	}
 	function reg_try(){	
-		print_r($_GET['massiv']);
-		$this->message($this->user->regTry($_GET['massiv']));
+		$this->message($this->user->regTry($_GET['array']));
 	}
 }
 ?>
