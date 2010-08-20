@@ -6,13 +6,9 @@ function register_click(){
 	return false;
 }
 function parse_form (form) {
-    var form_arr=Array();
-    var number=0;
+    var form_arr= new Object();
     $("#"+form + " input[type!='submit']").each(function () {    
-	form_arr[number]=Array();
-	form_arr[number][0]=this.id;
-	form_arr[number][1]=this.value;
-        number++;
+	form_arr[this.id]=this.value;
     });
     return form_arr;
 }

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once("modules/Def/index.php");
 
 class mod_auth_register extends Def{
@@ -22,7 +22,7 @@ class mod_auth_register extends Def{
 		return $_out;
 	}
 	function reg_try(){	
-		$this->message($this->user->regTry($_GET['array']));
+		$this->message($this->user->regTry($_GET['array'],$this->name));
 	}
 }
 ?>
