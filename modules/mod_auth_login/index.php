@@ -21,7 +21,7 @@ class mod_auth_login extends Def{
 		exit();
 	}
 	function show_short_auth(){
-		$_out="Авторизация";
+		$_out="РђРІС‚РѕСЂРёР·Р°С†РёСЏ";
 		return $_out;
 	}
 }

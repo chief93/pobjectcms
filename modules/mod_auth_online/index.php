@@ -5,7 +5,7 @@ class mod_auth_online extends Def{
 	function execute () {	
 		if(!$this->user->isAuth()) return "";
 		$data=$this->user->getUserInfo(); 
-		$_out="<br>Привет ".$data['login']."! <a href='javascript:void(0)' onClick='auth_exit();'>Выход</a>";
+		$_out="<br>РџСЂРёРІРµС‚ ".$data['login']."! <a href='javascript:void(0)' onClick='auth_exit();'>Р’С‹С…РѕРґ</a>";
         	if($this->action=="logout") $this->logout();
         	$this->smarty->assign('text',$_out);
         	return parent::execute();	

@@ -13,7 +13,7 @@ class User {
 	function load_register_settings(){
 		$str="login/2/password/1/password2/password/email/2";
 		$settings_arr=explode("/",$str);
-		$str="Логин не указан....Этот логин уже занят/Пароль не указан/Пароли не совпадают/Email не указан....Этот email уже занят";
+		$str="Р›РѕРіРёРЅ РЅРµ СѓРєР°Р·Р°РЅ....Р­С‚РѕС‚ Р»РѕРіРёРЅ СѓР¶Рµ Р·Р°РЅСЏС‚/РџР°СЂРѕР»СЊ РЅРµ СѓРєР°Р·Р°РЅ/РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚/Email РЅРµ СѓРєР°Р·Р°РЅ....Р­С‚РѕС‚ email СѓР¶Рµ Р·Р°РЅСЏС‚";
 		$txt_arr=explode("/",$str);
 		$n=0;
 		for($i=0;$i<count($settings_arr);$i+=2){
@@ -58,9 +58,9 @@ class User {
 	}
 	function regTry($array){
 		$str="login/2/password/1/password2/password/email/2";
-		$str="Логин не указан....Этот логин уже занят/Пароль не указан/Пароли не совпадают/Email не указан....Этот email уже занят";
+		$str="Р›РѕРіРёРЅ РЅРµ СѓРєР°Р·Р°РЅ....Р­С‚РѕС‚ Р»РѕРіРёРЅ СѓР¶Рµ Р·Р°РЅСЏС‚/РџР°СЂРѕР»СЊ РЅРµ СѓРєР°Р·Р°РЅ/РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚/Email РЅРµ СѓРєР°Р·Р°РЅ....Р­С‚РѕС‚ email СѓР¶Рµ Р·Р°РЅСЏС‚";
 		
-		$json_data=array("login"=>array("check"=>"2","empty_text"=>"heloрус"),"password"=>"123");
+		$json_data=array("login"=>array("check"=>"2","empty_text"=>"heloСЂСѓСЃ"),"password"=>"123");
 		print_r($json_data);
 		echo json_encode($json_data);
 		//$json_string='{"result":{"name":"123"},{"name":"124"}}';

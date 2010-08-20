@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-18 23:58:12
+<?php /* Smarty version 2.6.26, created on 2010-08-20 15:06:03
          compiled from modules/mod_news/index.tpl */ ?>
 
 <?php $_from = $this->_tpl_vars['source']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):

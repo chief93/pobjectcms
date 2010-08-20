@@ -1,31 +1,31 @@
 <?
 ############################
-# Ñåêöèÿ MySQL
+# Ð¡ÐµÐºÑ†Ð¸Ñ MySQL
 ############################
 define("MYSQL_HOST", "localhost");
 define("MYSQL_USER", "root");
 define("MYSQL_PASSWORD", "");
 define("MYSQL_DATABASE", "cms_db");
 define("MYSQL_PREFIX", "cms_");
-define("MYSQL_CHARSET", "cp1251");
+define("MYSQL_CHARSET", "utf8");
 define("MYSQL_DIR", str_replace("\\", "/", getcwd()).'../includes/classes/db/');
 
 ############################
-# Ñåêöèÿ øàáëîíîâ (smarty v3)
+# Ð¡ÐµÐºÑ†Ð¸Ñ ÑˆÐ°Ð±Ð»Ð¾Ð½Ð¾Ð² (smarty v3)
 ############################
 define('SMARTY_DIR', str_replace("\\", "/", getcwd()).'../includes/lib/smarty/');
 define("TMPL_DIR","./tmpl/");
 define("TMPL_DEBUG",	false);
-// [0 || 1 || 2] 0 - îòêëþ÷èòü êåøèðîâàíèå ïî óìîë÷àíèþ 1 - êåøèðîâàòü áåç CACHE_LIFETIME  2 - êåøèðîâàòü ñ çàäàííûì CACHE_LIFETIME
+// [0 || 1 || 2] 0 - Ð¾Ñ‚ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ ÐºÐµÑˆÐ¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ 1 - ÐºÐµÑˆÐ¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð±ÐµÐ· CACHE_LIFETIME  2 - ÐºÐµÑˆÐ¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ Ð·Ð°Ð´Ð°Ð½Ð½Ñ‹Ð¼ CACHE_LIFETIME
 define("TMPL_CACHING",	0);
 define("TMPL_CACHE_LIFETIME", 10);
 define("TMPL_CACHE_DIR", "./tmpl/system/cache/");
 define("TMPL_COMPILE_DIR", "./tmpl/system/compile/");
 define("TMPL_ALLOW_PHP", true);
 ############################
-# Ñåêöèÿ user
+# Ð¡ÐµÐºÑ†Ð¸Ñ user
 ############################
 define("USER_SALT", "random");
 define("USER_DIR", str_replace("\\", "/", getcwd()).'../includes/classes/user/');
-header('Content-type: text/html; charset=windows-1251');
+header('Content-type: text/html; charset=utf-8');
 ?>

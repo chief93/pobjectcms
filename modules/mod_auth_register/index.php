@@ -18,7 +18,7 @@ class mod_auth_register extends Def{
 		exit();
 	}
 	function show_short_reg(){
-		$_out="Регистрация";
+		$_out="Р РµРіРёСЃС‚СЂР°С†РёСЏ";
 		return $_out;
 	}
 	function reg_try(){	
