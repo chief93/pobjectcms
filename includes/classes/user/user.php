@@ -1,4 +1,4 @@
-<?
+﻿<?
 class User {
 	protected $mydb;
 	protected $salt;
@@ -11,22 +11,9 @@ class User {
 		return true;
 	}
 	function load_register_settings(){
-		$str="login/2/password/1/password2/password/email/2";
-		$settings_arr=explode("/",$str);
-		$str="Логин не указан....Этот логин уже занят/Пароль не указан/Пароли не совпадают/Email не указан....Этот email уже занят";
-		$txt_arr=explode("/",$str);
-		$n=0;
-		for($i=0;$i<count($settings_arr);$i+=2){
-			$this->fields[$settings_arr[$i]][0]=$settings_arr[$i+1];
-			if($settings_arr[$i+1]==2){
-				$a=explode("....",$txt_arr[$n]);
-				$this->fields[$settings_arr[$i]][1]=$a[0];
-				$this->fields[$settings_arr[$i]][2]=$a[1];
-			}
-			else
-				$this->fields[$settings_arr[$i]][1]=$txt_arr[$n];	
-			$n++;
-		}
+		$json_data=array("login"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Логин не указан","error_unoriginal_text"=>"Этот логин уже занят"),"password"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Пароль не указан"),"password2"=>array("empty_check"=>"1","equality_check"=>"1","equality_name"=>"password","error_equality_text"=>"Пароли не совпадают","error_empty_text"=>"Дополнительный пароль не указан"),"email"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Email не указан","error_unoriginal_text"=>"Этот email уже занят"));
+		$json=json_encode($json_data);
+		$this->fields=json_decode($json);
 		$this->errors=1;
 	}
 	function isAuth(){
@@ -57,32 +44,22 @@ class User {
 		exit();
 	}
 	function regTry($array){
-		$str="login/2/password/1/password2/password/email/2";
-		$str="Логин не указан....Этот логин уже занят/Пароль не указан/Пароли не совпадают/Email не указан....Этот email уже занят";
-		
-		$json_data=array("login"=>array("check"=>"2","empty_text"=>"heloрус"),"password"=>"123");
-		print_r($json_data);
-		echo json_encode($json_data);
-		//$json_string='{"result":{"name":"123"},{"name":"124"}}';
-		///$obj=json_decode($json_string);
-		//$obj=$obj->result;
-		//print_r($obj);
-		/*
 		if(!$this->errors) $this->load_register_settings();
 		$result=0;
 		foreach($array as $param){
 			$mod=$param[0];
-			if(($this->fields[$mod][0]==1||$this->fields[$mod][0]==2)&&$param[1]=="") $this->message($this->fields[$mod][1]);
-			if($this->fields[$mod][0]==2){
+			if($this->fields->$mod->empty_check=="1"&&$param[1]=="") $this->message($this->fields->$mod->error_empty_text);
+			if($this->fields->$mod->unoriginal_check=="1"){
 				$data=$this->mydb->query("select count(*) from users where ".$param[0]."='".$param[1]."'");
-				if($data>0) $this->message($this->fields[$mod][2]);
+				if($data>0) $this->message($this->fields->$mod->error_unoriginal_text);
 			}
-			if(!is_numeric($this->fields[$mod][0])){
-				if($param[1]!=$this->fields[$this->fields[$mod][0]][10]) $this->message($this->fields[$mod][1]);
+			if($this->fields->$mod->equality_check=="1"){
+				$mods=$this->fields->$mod->equality_name;
+				if($param[1]!=$this->fields->$mods->value) $this->message($this->fields->$mod->error_equality_text);
 			}
-			$this->fields[$mod][10]=$param[1];
+			$this->fields->$mod->value=$param[1];
 		}
-		echo "ok";*/
+		echo "ok";
 		
 		//print_r($this->fields);
 		//return count($parametrs);
