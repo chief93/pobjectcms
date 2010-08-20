@@ -57,6 +57,17 @@ class User {
 		exit();
 	}
 	function regTry($array){
+		$str="login/2/password/1/password2/password/email/2";
+		$str="Логин не указан....Этот логин уже занят/Пароль не указан/Пароли не совпадают/Email не указан....Этот email уже занят";
+		
+		$json_data=array("login"=>array("check"=>"2","empty_text"=>"heloрус"),"password"=>"123");
+		print_r($json_data);
+		echo json_encode($json_data);
+		//$json_string='{"result":{"name":"123"},{"name":"124"}}';
+		///$obj=json_decode($json_string);
+		//$obj=$obj->result;
+		//print_r($obj);
+		/*
 		if(!$this->errors) $this->load_register_settings();
 		$result=0;
 		foreach($array as $param){
@@ -71,19 +82,11 @@ class User {
 			}
 			$this->fields[$mod][10]=$param[1];
 		}
-		echo "ok";
+		echo "ok";*/
+		
 		//print_r($this->fields);
 		//return count($parametrs);
 	}
-	/*function regTry($a,$b,$c){
-		$data=$this->mydb->query("select id from users where login='".$a."'");
-		if(count($data)!=0) $this->message(7);
-		$pass=md5(md5($b.$this->salt));
-		$this->mydb->query("insert into users values('','".$a."','".$pass."','".$c."')");
-		setcookie ("login", $a,time()+36000);
-		setcookie ("password", $b,time()+36000);
-		$this->message(0);
-	}*/
 	function user_logout(){
 		setcookie ("login","");
 		setcookie ("password","");
