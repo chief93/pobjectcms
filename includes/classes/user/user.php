@@ -1,7 +1,7 @@
-﻿<?
+<?
 class User {
 	protected $mydb;
-	protected $salt;
+	public $salt;
 	protected $fields;
 	protected $errors;
 	function User(&$mydb,$salt){
@@ -30,14 +30,6 @@ class User {
 	function getUserInfo(){
 		if($this->isAuth()) return array('login'=>"".$_COOKIE["login"]."",'email'=>"".$_COOKIE["email"]."");
 		else return array('login'=>'Guest','email'=>'');
-	}
-	function authTry($a,$b){
-		$data=$this->mydb->query("select password from users where login='".$a."'");
-		if(count($data)==0) $this->message(3);
-		if(md5(md5($b.$this->salt))!=$data[0]['password']) $this->message(3);
-		setcookie ("login", $a,time()+36000);
-		setcookie ("password", $b,time()+36000);
-		$this->message(0);
 	}
 	function message($text){
 		echo $text;

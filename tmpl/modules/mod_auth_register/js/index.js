@@ -5,10 +5,3 @@ function register_click(){
 	});
 	return false;
 }
-function parse_form (form) {
-    var form_arr= new Object();
-    $("#"+form + " input[type!='submit']").each(function () {    
-	form_arr[this.id]=this.value;
-    });
-    return form_arr;
-}

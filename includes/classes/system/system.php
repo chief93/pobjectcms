@@ -5,10 +5,12 @@ class System {
 	var $smarty; 
 	var $js;
 	var $css;
+	var $forms;
 	function System(){
 		require_once(SMARTY_DIR . 'Smarty.class.php');
 		require_once(MYSQL_DIR . 'mysql.php');
 		require_once(USER_DIR . 'user.php');
+		require_once(FORMS_DIR . 'forms.php');
 		$this->smarty = new Smarty;
 		$this->smarty->template_dir = TMPL_DIR;
 		$this->smarty->debugging = TMPL_DEBUG;
@@ -19,6 +21,7 @@ class System {
 		$this->smarty->compile_dir = TMPL_COMPILE_DIR;
 		$this->mydb=new Database(MYSQL_HOST,MYSQL_USER,MYSQL_PASSWORD,MYSQL_DATABASE,MYSQL_CHARSET,MYSQL_PREFIX);
 		$this->user=new User($this->mydb,USER_SALT);
+		$this->forms=new Forms($this->mydb);
 		$this->js=$this->load_res("js");
 		$this->css=$this->load_res("css");
 		return true;
@@ -26,7 +29,7 @@ class System {
 	function load($class_name,$settings="",$admin_settings=""){
 		require_once("modules/".$class_name."/index.php");
 		$object=new $class_name();
-		$object->load($class_name,$settings,$admin_settings,$this->mydb,$this->smarty,$this->user,$this->js,$this->css);
+		$object->load($class_name,$settings,$admin_settings,$this->mydb,$this->smarty,$this->user,$this->js,$this->css,$this->forms);
 		return $object->execute();
 	}
 	protected function load_res($type){

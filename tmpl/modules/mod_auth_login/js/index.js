@@ -1,13 +1,10 @@
-function auth_click(){
-	$.get('/ajax.php', {module: 'mod_auth_login', action: 'auth_try',login:$('#auth_login').val(),password:$('#auth_password').val()},function(data){
-		var txt="";
+﻿function auth_click(){
+	data=parse_form('mod_auth_login');
+	$.get('/ajax.php', {module: 'mod_auth_login', action: 'auth_try', 'array': data},function(data){
 		switch(data){
-			case "1": txt="Ошибка - введите логин";break;
-			case "2": txt="Ошибка - введите пароль";break;
-			case "3": txt="Ошибка - неправильный логин или пароль";break;
-			case "0": window.location.reload(); break;
+			case "1": window.location.reload(); break;
+			default: $("#auth_error").html("<span style='color:red;'>" + data + "</span>");
 		}
-		$("#auth_error").html("<span style='color:red;'>" + txt + "</span>");
 	});
 	return false;
 }

@@ -20,10 +20,10 @@ function toggle(target,one){
 		$.get('ajax.php', {module: target, action: one}, function (data) {$('#'+one).html(data);});
 	}
 }
-function hide(target){
-	$('#'+target).css('visibility','hidden');
-	$('#'+target).height('0');
-}
-function show(target){
-	$('#'+target).css('visibility','visible');
+function parse_form (form) {
+    var form_arr= new Object();
+    $("#"+form + " input[type!='submit']").each(function () {    
+	form_arr[this.id]=this.value;
+    });
+    return form_arr;
 }

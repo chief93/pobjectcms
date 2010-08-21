@@ -9,7 +9,8 @@ class Def
 	protected $action;
 	protected $settings;
 	protected $admin_settings;
-	public function load($name,$settings,$admin_settings,&$mysql,&$smarty,&$user,&$js,&$css){
+	protected $forms;
+	public function load($name,$settings,$admin_settings,&$mysql,&$smarty,&$user,&$js,&$css,$forms){
 		$this->name=$name;
 		$this->settings=explode("/",$settings);
 		$this->admin_settings=explode("/",$admin_settings);
@@ -20,6 +21,7 @@ class Def
 		else $this->action="";
 		$js=$this->load_res("js",$js);
 		$css=$this->load_res("css",$css);
+		$this->forms=$forms;
 		return true;
 	}
 	public function setAction($act){

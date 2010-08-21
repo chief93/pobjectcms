@@ -1,6 +1,7 @@
 <?
 header("http/1.0 200 Ok");
 require_once('config/load.php');
+
 $is_module=0;
 if($_SERVER['REDIRECT_URL']!=""){
 	if(substr($_SERVER['REDIRECT_URL'], -1)=="/") $parametrs=substr($_SERVER['REDIRECT_URL'],1,-1);
