@@ -17,14 +17,14 @@ class User {
 		$this->errors=1;
 	}
 	function isAuth(){
-		if(!isset($_COOKIE["login"])||!isset($_COOKIE["password"])) return false;
-		$data=$this->mydb->query("select password from users where login='".$_COOKIE["login"]."'");
+		if(!isset($_COOKIE["login"])||!isset($_COOKIE["password"])||!isset($_COOKIE["access"])) return false;
+		$data=$this->mydb->query("select password from users where login='".$_COOKIE['login']."' and access=".(int)$_COOKIE['access']);
 		if(count($data)==0) return false;
 		if($_COOKIE["password"]!=$data[0]['password']) return false;
 		else return true;
 	}
 	function getAccess(){
-		if($this->isAuth()) return 1;
+		if($this->isAuth()) return $_COOKIE["access"];
 		else return 0;
 	}
 	function getUserInfo(){
@@ -34,6 +34,16 @@ class User {
 	function message($text){
 		echo $text;
 		exit();
+	}
+	function login($login,$password,$access){
+			setcookie ("login", $login,time()+36000);
+			setcookie ("password", $password,time()+36000);
+			setcookie ("access", $access,time()+36000);
+	}
+	function logout(){
+			setcookie ("login", "");
+			setcookie ("password", "");
+			setcookie ("access", "");
 	}
 }
 ?>

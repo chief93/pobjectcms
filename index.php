@@ -20,7 +20,7 @@ if($_SERVER['REDIRECT_URL']!=""){
 else{
 	$where="mod_menu='*'";
 }
-$l_r=$system->mydb->query("select mod_name,mod_position,mod_settings,mod_admin_settings from modules where ".$where." and (mod_visible='".$system->user->getAccess()."' or mod_visible='-1') order by mod_order");
+$l_r=$system->mydb->query("select mod_name,mod_position,mod_settings,mod_admin_settings from modules where ".$where." and (mod_visible like '%".$system->user->getAccess()."%' or mod_visible='-1') order by mod_order");
 $arr=array();
 if(count($l_r)>0){
 	foreach($l_r as $a){
