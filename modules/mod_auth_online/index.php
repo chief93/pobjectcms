@@ -11,7 +11,8 @@ class mod_auth_online extends Def{
         	return parent::execute();	
 	}
 	function logout(){
-		$this->user->user_logout();
+		setcookie ("login","");
+		setcookie ("password","");
 		return true;
 	}
 }

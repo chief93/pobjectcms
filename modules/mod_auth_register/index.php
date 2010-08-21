@@ -23,7 +23,8 @@ class mod_auth_register extends Def{
 	}
 	function reg_try(){
 		$result=$this->forms->check_form($_GET['array'],$this->name,'users');
-		if($result==0){
+		if($result==0){		
+			$_GET['array']['password']=md5(md5( $_GET['array']['password'].$this->user->salt));
 			$this->mydb->query("insert into users values ('','".$_GET['array']['login']."','".$_GET['array']['password']."','".$_GET['array']['email']."','".date(U)."','".date(U)."')");
 			setcookie ("login", $_GET['array']['login'],time()+36000);
 			setcookie ("password", $_GET['array']['password'],time()+36000);
