@@ -1,4 +1,4 @@
-﻿function auth_click(){
+function auth_click(){
 	data=parse_form('mod_auth_login');
 	$.get('/ajax.php', {module: 'mod_auth_login', action: 'auth_try', 'array': data},function(data){
 		switch(data){
