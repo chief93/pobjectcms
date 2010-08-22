@@ -8,7 +8,14 @@ if($_SERVER['REDIRECT_URL']!=""){
 	else $parametrs=substr($_SERVER['REDIRECT_URL'],1);
 	
 	$params=explode("/",$parametrs);
-	
+
+	if($params[0]=="admin"){
+		$a="1234";
+		include('secret_name/index.php');
+		//echo substr($_SERVER['REDIRECT_URL'],1);
+		//$admin=new admin($this->system,array());
+		exit();
+	}
 	if(substr($parametrs,0,4)=="mod_"){
 		$is_module=1;
 		$where="(mod_menu='*' or mod_name='".$params[0]."')";	
