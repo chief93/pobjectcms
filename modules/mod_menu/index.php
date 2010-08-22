@@ -3,7 +3,7 @@ require_once("modules/Def/index.php");
 
 class mod_menu extends Def{
 	function execute () {	
-			$data=$this->mydb->query("select * from menu where access like '%".$this->user->getAccess()."%' or access='-1'");
+			$data=$this->mydb->query("select * from menu where (access like '%".$this->user->getAccess()."%' or access='-1') and type='".$this->settings[0]."'");
         	$this->smarty->assign('items',$data);
         	return parent::execute();	
 	}

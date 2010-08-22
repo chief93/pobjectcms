@@ -1,5 +1,5 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-22 17:39:59
-         compiled from index.tpl */ ?>
+<?php /* Smarty version 2.6.26, created on 2010-08-22 19:18:46
+         compiled from admin.tpl */ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
