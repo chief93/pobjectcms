@@ -1,6 +1,13 @@
 <?
 header("http/1.0 200 Ok");
 if($a!="1234") die("Несанкционированный доступ");
+function microtime_float() {  
+    list($usec, $sec) = explode(" ", microtime());  
+    return ((float)$usec + (float)$sec);  
+    }  
+
+$time_start = microtime_float(); 
+
 switch($system->user->getAccess()){
 	case "0": $arr=load_auth($system);break;
 	case "2": $arr=start_admin($system);break;
@@ -11,6 +18,7 @@ foreach($arr as $key => $value){
 	$system->smarty->assign($key, $value);
 }
 $system->smarty->display('admin.tpl');
+printf ("<font color=#C0C0C0>Render time: %.3f sec</font>",microtime_float()-$time_start);  
 
 exit();
 function load_auth($system){
