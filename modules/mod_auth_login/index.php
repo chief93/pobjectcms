@@ -18,7 +18,7 @@ class mod_auth_login extends Def{
 			$data=$this->mydb->query("select access from users where login='".$_GET['array']['login']."'");
 			$this->user->login($_GET['array']['login'],$_GET['array']['password'],$data[0]['access']);
 		}	
-		else $result="Логин или пароль не верный";
+		else $result="Р›РѕРіРёРЅ РёР»Рё РїР°СЂРѕР»СЊ РЅРµ РІРµСЂРЅС‹Р№";
 		$this->message($result);
 	}
 	function message($text){
@@ -26,7 +26,7 @@ class mod_auth_login extends Def{
 		exit();
 	}
 	function show_short_auth(){
-		$_out="Авторизация";
+		$_out="РђРІС‚РѕСЂРёР·Р°С†РёСЏ";
 		return $_out;
 	}
 }

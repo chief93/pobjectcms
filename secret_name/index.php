@@ -1,6 +1,6 @@
 <?
 header("http/1.0 200 Ok");
-if($a!="1234") die("Несанкционированный доступ");
+if($a!="1234") die("РќРµСЃР°РЅРєС†РёРѕРЅРёСЂРѕРІР°РЅРЅС‹Р№ РґРѕСЃС‚СѓРї");
 function microtime_float() {  
     list($usec, $sec) = explode(" ", microtime());  
     return ((float)$usec + (float)$sec);  
@@ -11,7 +11,7 @@ $time_start = microtime_float();
 switch($system->user->getAccess()){
 	case "0": $arr=load_auth($system);break;
 	case "2": $arr=start_admin($system);break;
-	default: die("У Вас недостаточно прав доступа");break;
+	default: die("РЈ Р’Р°СЃ РЅРµРґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РїСЂР°РІ РґРѕСЃС‚СѓРїР°");break;
 }
 $system->smarty->assign('settings', array('scripts'=>$system->js,'styles'=>$system->css));
 foreach($arr as $key => $value){

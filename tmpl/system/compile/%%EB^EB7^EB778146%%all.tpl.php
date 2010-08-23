@@ -1,10 +1,10 @@
-<?php /* Smarty version 2.6.26, created on 2010-08-23 01:22:26
-         compiled from modules/mod_admin_register/index.tpl */ ?>
-п»ї<form action="" method="GET" onSubmit="admin_register_click();return false;" id="mod_admin_register">
-<table border=1><tr><td rowspan="2">в„–</td><td rowspan="2">РџРѕР»Рµ</td><td colspan="2">РџСЂРѕРІРµСЂРєР° РїСѓСЃС‚РѕС‚С‹</td><td colspan="2">РџСЂРѕРІРµСЂРєР° РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё</td>
-<td colspan="2">РџСЂРѕРІРµСЂРєР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёСЏ</td><td colspan="2">РџСЂРѕРІРµСЂРєР° СЂРµРіСѓР»СЏСЂРєРѕР№</td></tr>
-<tr><td>?</td><td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td><td>?</td>
-<td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td><td>РЎРѕРѕС‚РІРµС‚СЃС‚РІРёРµ</td><td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td><td>Р РµРіСѓР»СЏСЂРєР°</td><td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td></tr>
+<?php /* Smarty version 2.6.26, created on 2010-08-23 14:43:45
+         compiled from all.tpl */ ?>
+<form action="" method="GET" onSubmit="admin_register_click();return false;" id="mod_admin_register">
+<table border=1><tr><td rowspan="2">№</td><td rowspan="2">Поле</td><td colspan="2">Проверка пустоты</td><td colspan="2">Проверка оригинальности</td>
+<td colspan="2">Проверка соответствия</td><td colspan="2">Проверка регуляркой</td></tr>
+<tr><td>?</td><td>Текст ошибки</td><td>?</td>
+<td>Текст ошибки</td><td>Соответствие</td><td>Текст ошибки</td><td>Регулярка</td><td>Текст ошибки</td></tr>
 
 <?php $_from = $this->_tpl_vars['source']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['foo'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['foo']['total'] > 0):
@@ -49,5 +49,5 @@ if ($this->_foreach['foo']['total'] > 0):
 "/></td></tr>
 <?php endforeach; endif; unset($_from); ?>
 </table>
-<input type="submit" class="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ">
+<input type="submit" class="submit" value="Сохранить">
 </form>

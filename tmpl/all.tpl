@@ -1,8 +1,8 @@
 <form action="" method="GET" onSubmit="admin_register_click();return false;" id="mod_admin_register">
-<table border=1><tr><td rowspan="2">в„–</td><td rowspan="2">РџРѕР»Рµ</td><td colspan="2">РџСЂРѕРІРµСЂРєР° РїСѓСЃС‚РѕС‚С‹</td><td colspan="2">РџСЂРѕРІРµСЂРєР° РѕСЂРёРіРёРЅР°Р»СЊРЅРѕСЃС‚Рё</td>
-<td colspan="2">РџСЂРѕРІРµСЂРєР° СЃРѕРѕС‚РІРµС‚СЃС‚РІРёСЏ</td><td colspan="2">РџСЂРѕРІРµСЂРєР° СЂРµРіСѓР»СЏСЂРєРѕР№</td></tr>
-<tr><td>?</td><td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td><td>?</td>
-<td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td><td>РЎРѕРѕС‚РІРµС‚СЃС‚РІРёРµ</td><td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td><td>Р РµРіСѓР»СЏСЂРєР°</td><td>РўРµРєСЃС‚ РѕС€РёР±РєРё</td></tr>
+<table border=1><tr><td rowspan="2">№</td><td rowspan="2">Поле</td><td colspan="2">Проверка пустоты</td><td colspan="2">Проверка оригинальности</td>
+<td colspan="2">Проверка соответствия</td><td colspan="2">Проверка регуляркой</td></tr>
+<tr><td>?</td><td>Текст ошибки</td><td>?</td>
+<td>Текст ошибки</td><td>Соответствие</td><td>Текст ошибки</td><td>Регулярка</td><td>Текст ошибки</td></tr>
 
 {foreach item=item from=$source name=foo}
 <tr><td>{$item.id}</td><td><input type="text" value="{$item.field_name}"/ id="text_{$smarty.foreach.foo.iteration}"></td>
@@ -24,5 +24,5 @@
 <td><input type="text" value="{$item.regular_check}" id="ch_reg_{$smarty.foreach.foo.iteration}"></td><td><input type="text" value="{$item.regular_check_error_text}" id="unor_reg_{$smarty.foreach.foo.iteration}"/></td></tr>
 {/foreach}
 </table>
-<input type="submit" class="submit" value="РЎРѕС…СЂР°РЅРёС‚СЊ">
+<input type="submit" class="submit" value="Сохранить">
 </form>

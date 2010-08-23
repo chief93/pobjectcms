@@ -8,7 +8,7 @@ class mod_comments extends Def{
 		else $page=1;
 		$data=$this->mydb->query("select id,text,author,data from comments where module='".$this->settings[0]."' and module_id='".(int)$this->settings[2]."' and status=1 limit ".(($page-1)*$this->settings[1]).",".$this->settings[1]."");
 		for($i=0;$i<count($data);$i++){
-			if($data[$i]['author']==-1) $data[$i]['author']="Гость";
+			if($data[$i]['author']==-1) $data[$i]['author']="Р“РѕСЃС‚СЊ";
 			$data[$i]['data']=date('h:i:s j-M-o', $data[$i]['data']);
 		}		
 		return $data;

@@ -6,15 +6,15 @@
 <div id="register_error"><br></div>
 <table>
 <tr>
-<td>Логин:</td>
+<td>Р›РѕРіРёРЅ:</td>
 <td><input id="login"></td>
 </tr>
 <tr>
-<td>Пароль:</td>
+<td>РџР°СЂРѕР»СЊ:</td>
 <td><input id="password" type="password"></td>
 </tr>
 <tr>
-<td>Проверка пароля:</td>
+<td>РџСЂРѕРІРµСЂРєР° РїР°СЂРѕР»СЏ:</td>
 <td><input id="password2" type="password"></td>
 </tr>
 <tr>
@@ -22,7 +22,7 @@
 <td><input id="email"></td>
 </tr>
 <tr>
-<td><input type="submit" value="Зарегистрироваться"></td>
+<td><input type="submit" value="Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ"></td>
 </tr>
 </table>
 </form>

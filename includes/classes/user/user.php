@@ -11,7 +11,7 @@ class User {
 		return true;
 	}
 	function load_register_settings(){
-		$json_data=array("login"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Логин не указан","error_unoriginal_text"=>"Этот логин уже занят"),"password"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Пароль не указан"),"password2"=>array("empty_check"=>"1","equality_check"=>"1","equality_name"=>"password","error_equality_text"=>"Пароли не совпадают","error_empty_text"=>"Дополнительный пароль не указан"),"email"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Email не указан","error_unoriginal_text"=>"Этот email уже занят"));
+		$json_data=array("login"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Р›РѕРіРёРЅ РЅРµ СѓРєР°Р·Р°РЅ","error_unoriginal_text"=>"Р­С‚РѕС‚ Р»РѕРіРёРЅ СѓР¶Рµ Р·Р°РЅСЏС‚"),"password"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"РџР°СЂРѕР»СЊ РЅРµ СѓРєР°Р·Р°РЅ"),"password2"=>array("empty_check"=>"1","equality_check"=>"1","equality_name"=>"password","error_equality_text"=>"РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚","error_empty_text"=>"Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ РЅРµ СѓРєР°Р·Р°РЅ"),"email"=>array("empty_check"=>"1","unoriginal_check"=>"1","error_empty_text"=>"Email РЅРµ СѓРєР°Р·Р°РЅ","error_unoriginal_text"=>"Р­С‚РѕС‚ email СѓР¶Рµ Р·Р°РЅСЏС‚"));
 		$json=json_encode($json_data);
 		$this->fields=json_decode($json);
 		$this->errors=1;
